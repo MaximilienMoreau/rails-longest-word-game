@@ -1,0 +1,20 @@
+<div class="container py-5">
+  <h1 class="title mb-2">Longest Word — Cyber Edition</h1>
+  <p class="subtitle mb-4">Compose un mot avec la grille. Validation via dictionnaire.</p>
+
+  <ul class="letters mb-4">
+    <% @letters.each do |letter| %>
+      <li class="letter"><%= letter %></li>
+    <% end %>
+  </ul>
+
+  <form action="<%= score_path %>" method="post" data-turbo="false" class="tech-card p-4">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :letters, @letters.join(" ") %>
+
+    <label for="word" class="form-label">Your word</label>
+    <input type="text" id="word" name="word" class="form-control tech-input" placeholder="e.g. matrix" />
+
+    <button type="submit" class="tech-btn mt-3 w-100">RUN</button>
+  </form>
+</div>

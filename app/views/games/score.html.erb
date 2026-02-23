@@ -1,0 +1,23 @@
+<div class="container py-5">
+  <h1 class="title mb-3">Result</h1>
+
+  <div class="tech-card p-4">
+    <div class="tech-block mb-3">
+      <p class="kicker">Grid</p>
+      <p class="value"><%= @letters.join(" ") %></p>
+    </div>
+
+    <div class="tech-block mb-3">
+      <p class="kicker">Your word</p>
+      <p class="value"><%= @word %></p>
+    </div>
+
+    <div class="tech-block">
+      <p class="kicker">Verdict</p>
+      <p class="value"><%= @message %></p>
+      <p class="score">Score: <%= @score %></p>
+    </div>
+
+    <%= link_to "↩ New game", new_path, class: "tech-link" %>
+  </div>
+</div>
